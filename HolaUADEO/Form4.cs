@@ -12,7 +12,16 @@ namespace HolaUADEO
 {
     public partial class Form4 : Form
     {
-        private double num1, num2;
+        double num1, num2;
+        //const string SUMA = "suma";
+        //const string RESTA = "resta";
+        //const string MULTIPLICACION = "multiplicacion";
+        //const string DIVISION = "division";
+        //enum Operacion
+        //{
+        //    Suma, Resta, Multiplicacion, Division
+        //}
+
 
         public Form4()
         {
@@ -44,12 +53,35 @@ namespace HolaUADEO
 
         private void btnSuma_Click(object sender, EventArgs e)
         {
-            // TODO: validar que existan valores en los cuadros de textos
+            CalcularOperacion(TipoOperacion.Suma);
+        }
+
+        private void CalcularOperacion(TipoOperacion op)
+        {
             if (textBoxIsNotEmpty() && valuesCanParseToDouble())
             {
-                // TODO: validar que los valores existentes sean numericos
-                lblResultado.Text = (num1 + num2).ToString();
-                // TODO: realizar la sumatoria y mostrar el resultado en la etiqueta lblResultado
+                double resultado = 0;
+                if (op == TipoOperacion.Suma)
+                {
+                    resultado = num1 + num2;
+                }
+                else if (op == TipoOperacion.Resta)
+                {
+                    resultado = num1 - num2;
+                }
+                else if (op == TipoOperacion.Multiplicacion)
+                {
+                    resultado = num1 * num2;
+                }
+                else if (op == TipoOperacion.Division)
+                {
+                    if (num2 > 0)
+                        resultado = num1 / num2;
+                    else
+                        resultado = 0;
+                }
+
+                lblResultado.Text = resultado.ToString();
             }
             else
             {
@@ -59,47 +91,17 @@ namespace HolaUADEO
 
         private void btnResta_Click(object sender, EventArgs e)
         {
-            // TODO: validar que existan valores en los cuadros de textos
-            if (textBoxIsNotEmpty() && valuesCanParseToDouble())
-            {
-                // TODO: validar que los valores existentes sean numericos
-                lblResultado.Text = (num1 - num2).ToString();
-                // TODO: realizar la sumatoria y mostrar el resultado en la etiqueta lblResultado
-            }
-            else
-            {
-                lblResultado.Text = "Los datos son obligatorios y deben ser numericos";
-            }
+            CalcularOperacion(TipoOperacion.Resta);
         }
 
         private void btnMultiplicacion_Click(object sender, EventArgs e)
         {
-            // TODO: validar que existan valores en los cuadros de textos
-            if (textBoxIsNotEmpty() && valuesCanParseToDouble())
-            {
-                // TODO: validar que los valores existentes sean numericos
-                lblResultado.Text = (num1 * num2).ToString();
-                // TODO: realizar la sumatoria y mostrar el resultado en la etiqueta lblResultado
-            }
-            else
-            {
-                lblResultado.Text = "Los datos son obligatorios y deben ser numericos";
-            }
+            CalcularOperacion(TipoOperacion.Multiplicacion);
         }
 
         private void btnDivision_Click(object sender, EventArgs e)
         {
-            // TODO: validar que existan valores en los cuadros de textos
-            if (textBoxIsNotEmpty() && valuesCanParseToDouble())
-            {
-                // TODO: validar que los valores existentes sean numericos
-                lblResultado.Text = (num1 / num2).ToString();
-                // TODO: realizar la sumatoria y mostrar el resultado en la etiqueta lblResultado
-            }
-            else
-            {
-                lblResultado.Text = "Los datos son obligatorios y deben ser numericos";
-            }
+            CalcularOperacion(TipoOperacion.Division);
         }
     }
 }

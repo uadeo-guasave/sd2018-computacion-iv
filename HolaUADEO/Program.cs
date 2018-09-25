@@ -13,7 +13,7 @@ namespace HolaUADEO
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.Run(new Form4());
+            Application.Run(new Form5());
         }
     }
 }
