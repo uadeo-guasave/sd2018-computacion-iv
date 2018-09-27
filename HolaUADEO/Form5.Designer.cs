@@ -38,7 +38,7 @@
             this.txtNombreDeUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtContraseña2 = new System.Windows.Forms.TextBox();
-            this.d = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -133,12 +133,12 @@
             this.txtContraseña2.TabIndex = 9;
             this.txtContraseña2.UseSystemPasswordChar = true;
             // 
-            // d
+            // txtNombre
             // 
-            this.d.Location = new System.Drawing.Point(27, 191);
-            this.d.Name = "d";
-            this.d.Size = new System.Drawing.Size(256, 20);
-            this.d.TabIndex = 10;
+            this.txtNombre.Location = new System.Drawing.Point(27, 191);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(256, 20);
+            this.txtNombre.TabIndex = 10;
             // 
             // txtApellidos
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtCorreoElectronico);
             this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.d);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtContraseña2);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombreDeUsuario);
@@ -230,7 +230,7 @@
         private System.Windows.Forms.TextBox txtNombreDeUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtContraseña2;
-        private System.Windows.Forms.TextBox d;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.TextBox txtTelefono;

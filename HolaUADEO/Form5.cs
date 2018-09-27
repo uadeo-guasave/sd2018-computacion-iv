@@ -20,8 +20,62 @@ namespace HolaUADEO
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var usuario = new Usuario();
-            MessageBox.Show($"UserId: {usuario.Id}");
+            var usuario = new Usuario
+            {
+                Nombre = ValidarNombre(txtNombreDeUsuario.Text),
+                Contraseña = txtContraseña.Text,
+                Nombres = txtNombre.Text,
+                Apellidos = txtApellidos.Text,
+                CorreoElectronico = txtCorreoElectronico.Text,
+                Telefono = txtTelefono.Text
+            };
+
+            MessageBox.Show(usuario.Nombre);
+
+        }
+
+        private string ValidarNombre(string username)
+        {
+            /* validacion de nombre de usuario
+             * 3.- que inicie con una letra
+             * 2.- debe tener solo letras, numeros y/o _
+             * 1.- longitud: entre 6 y 12
+             */
+
+            int longitud = username.Length;
+            if (longitud >= 6 && longitud <= 12)
+            {
+                // TODO: agregar codigo para cuando pase la validacion de longitud
+                bool esLetraNumero_ = true;
+                for (int i = 0; i < longitud; i++)
+                {
+                    if (!Char.IsLetterOrDigit(username[i]) || username[i] != '_')
+                    {
+                        esLetraNumero_ = false;
+                        break;
+                    }
+                }
+                if (esLetraNumero_)
+                {
+                    if (Char.IsLetter(username[0]))
+                    {
+                        return username;
+                    }
+                    else
+                    {
+                        throw new FormatException();
+                    }
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+            }
+            else
+            {
+                // TODO: informar del error de longitud
+                throw new FormatException();
+            }
         }
     }
 }
