@@ -22,23 +22,65 @@ namespace HolaUADEO
         {
             var usuario = new Usuario
             {
-                Nombre = ValidarNombre(txtNombreDeUsuario.Text),
-                Contraseña = txtContraseña.Text,
                 Nombres = txtNombre.Text,
                 Apellidos = txtApellidos.Text,
                 CorreoElectronico = txtCorreoElectronico.Text,
                 Telefono = txtTelefono.Text
             };
 
-            MessageBox.Show(usuario.Nombre);
+            // validar nombre de usuario
+            try
+            {
+                usuario.Nombre = ValidarNombre(txtNombreDeUsuario.Text);
+                txtNombreDeUsuario.BackColor = Color.LightGreen;
+            }
+            catch (FormatException ex)
+            {
+                txtNombreDeUsuario.BackColor = Color.FromName("Info");
+                MessageBox.Show(ex.Message);
+            }
 
+            // validar contraseña
+            try
+            {
+                usuario.Contraseña = ValidarContraseña(txtContraseña.Text, txtContraseña2.Text);
+                txtContraseña.BackColor = Color.LightGreen;
+                txtContraseña2.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                txtContraseña.BackColor = Color.FromName("Info");
+                txtContraseña2.BackColor = Color.FromName("Info");
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private string ValidarContraseña(string contraseña, string contraseña2)
+        {
+            int longitud = contraseña.Length;
+            if (longitud >= 8 && longitud <= 15)
+            {
+                if (contraseña == contraseña2)
+                {
+                    return contraseña;
+                }
+                else
+                {
+                    throw new Exception("Las contraseñas deben ser iguales");
+                }
+            }
+            else
+            {
+                throw new FormatException("La longitud de la contraseña debe ser >=8 y <=15");
+            }
         }
 
         private string ValidarNombre(string username)
         {
             /* validacion de nombre de usuario
-             * 3.- que inicie con una letra
-             * 2.- debe tener solo letras, numeros y/o _
+             * 2.- que inicie con una letra
+             * 3.- debe tener solo letras, numeros y/o _
              * 1.- longitud: entre 6 y 12
              */
 
@@ -46,36 +88,37 @@ namespace HolaUADEO
             if (longitud >= 6 && longitud <= 12)
             {
                 // TODO: agregar codigo para cuando pase la validacion de longitud
-                bool esLetraNumero_ = true;
-                for (int i = 0; i < longitud; i++)
+                if (Char.IsLetter(username[0]))
                 {
-                    if (!Char.IsLetterOrDigit(username[i]) || username[i] != '_')
+                    for (int i = 1; i < longitud; i++)
                     {
-                        esLetraNumero_ = false;
-                        break;
+                        if (!char.IsLetterOrDigit(username[i]) && username[i] != '_')
+                        {
+                            throw new FormatException("La cadena debe contener solo letra, numeros y _");
+                        }
                     }
-                }
-                if (esLetraNumero_)
-                {
-                    if (Char.IsLetter(username[0]))
-                    {
-                        return username;
-                    }
-                    else
-                    {
-                        throw new FormatException();
-                    }
+                    return username;
                 }
                 else
                 {
-                    throw new FormatException();
+                    throw new FormatException("El primer caracter debe ser letra [a-z][A-Z]");
                 }
             }
             else
             {
                 // TODO: informar del error de longitud
-                throw new FormatException();
+                throw new FormatException("La longitud del nombre debe ser >=6 <=12");
             }
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            // toolTip1.SetToolTip(label2, "prueba");
+        }
+
+        private void txtNombreDeUsuario_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

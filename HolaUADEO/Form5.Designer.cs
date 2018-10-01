@@ -113,13 +113,16 @@
             // txtNombreDeUsuario
             // 
             this.txtNombreDeUsuario.Location = new System.Drawing.Point(27, 38);
+            this.txtNombreDeUsuario.MaxLength = 12;
             this.txtNombreDeUsuario.Name = "txtNombreDeUsuario";
             this.txtNombreDeUsuario.Size = new System.Drawing.Size(256, 20);
             this.txtNombreDeUsuario.TabIndex = 7;
+            this.txtNombreDeUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreDeUsuario_Validating);
             // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(27, 89);
+            this.txtContraseña.MaxLength = 15;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(256, 20);
             this.txtContraseña.TabIndex = 8;
@@ -128,6 +131,7 @@
             // txtContraseña2
             // 
             this.txtContraseña2.Location = new System.Drawing.Point(27, 140);
+            this.txtContraseña2.MaxLength = 15;
             this.txtContraseña2.Name = "txtContraseña2";
             this.txtContraseña2.Size = new System.Drawing.Size(256, 20);
             this.txtContraseña2.TabIndex = 9;
@@ -212,6 +216,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form5";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
