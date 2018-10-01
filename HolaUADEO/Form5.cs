@@ -118,7 +118,7 @@ namespace HolaUADEO
 
         private void txtNombreDeUsuario_Validating(object sender, CancelEventArgs e)
         {
-
+            // TODO: crear codigo para validar por compomente
         }
     }
 }
