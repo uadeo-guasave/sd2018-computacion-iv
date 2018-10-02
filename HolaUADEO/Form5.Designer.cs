@@ -127,6 +127,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(256, 20);
             this.txtContraseña.TabIndex = 8;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.Validating += new System.ComponentModel.CancelEventHandler(this.txtContraseña_Validating);
             // 
             // txtContraseña2
             // 
@@ -136,6 +137,7 @@
             this.txtContraseña2.Size = new System.Drawing.Size(256, 20);
             this.txtContraseña2.TabIndex = 9;
             this.txtContraseña2.UseSystemPasswordChar = true;
+            this.txtContraseña2.Validating += new System.ComponentModel.CancelEventHandler(this.txtContraseña2_Validating);
             // 
             // txtNombre
             // 
@@ -216,7 +218,6 @@
             this.Controls.Add(this.label2);
             this.Name = "Form5";
             this.Text = "Usuarios";
-            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
