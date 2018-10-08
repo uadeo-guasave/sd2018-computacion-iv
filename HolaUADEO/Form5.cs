@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,30 +24,7 @@ namespace HolaUADEO
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //var usuario = new Usuario
-            //{
-            //    Nombres = txtNombre.Text,
-            //    Apellidos = txtApellidos.Text,
-            //    CorreoElectronico = txtCorreoElectronico.Text,
-            //    Telefono = txtTelefono.Text
-            //};
-
-            
-
-            //// validar contraseña
-            //try
-            //{
-            //    usuario.Contraseña = ValidarContraseña(txtContraseña.Text, txtContraseña2.Text);
-            //    txtContraseña.BackColor = Color.LightGreen;
-            //    txtContraseña2.BackColor = Color.LightGreen;
-            //}
-            //catch (Exception ex)
-            //{
-            //    txtContraseña.BackColor = Color.FromName("Info");
-            //    txtContraseña2.BackColor = Color.FromName("Info");
-            //    MessageBox.Show(ex.Message);
-            //}
-
+            // TODO: pendiente
         }
 
         private bool ValidarLongitudContraseña(string contraseña)
@@ -163,6 +141,64 @@ namespace HolaUADEO
             else
             {
                 throw new FormatException("Las contraseñas deben ser iguales");
+            }
+        }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text != "")
+            {
+                Error.Clear();
+                NuevoUsuario.Nombre = txtNombre.Text;
+            }
+            else
+            {
+                e.Cancel = true;
+                txtNombre.SelectAll();
+                Error.SetError(txtNombre, "El nombre es obligatorio");
+            }
+        }
+
+        private void txtApellidos_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidos.Text != "")
+            {
+                Error.Clear();
+                NuevoUsuario.Apellidos = txtApellidos.Text;
+            }
+            else
+            {
+                e.Cancel = true;
+                txtApellidos.SelectAll();
+                Error.SetError(txtApellidos, "Los apellidos son obligatorios");
+            }
+        }
+
+        private void txtCorreoElectronico_Validating(object sender, CancelEventArgs e)
+        {
+            //string patron = "[a-z,A-Z,.,_]+@[a-z,A-Z,.,_]+";
+            //var emailRegex = new Regex(patron);
+            //if (emailRegex.IsMatch(txtCorreoElectronico.Text))
+            //    MessageBox.Show("correo electronico correcto");
+            //else
+            //    MessageBox.Show("correo incorrecto");
+            try
+            {
+                var correo = new System.Net.Mail.MailAddress(txtCorreoElectronico.Text);
+                NuevoUsuario.CorreoElectronico = txtCorreoElectronico.Text;
+                Error.Clear();
+            }
+            catch (ArgumentException)
+            {
+                // llega aqui cuando el correo esta vacio
+                e.Cancel = true;
+                Error.SetError(txtCorreoElectronico, "Campo obligatorio");
+            }
+            catch (FormatException)
+            {
+                // llega aqui cuando el correo tiene formato incorrecto
+                e.Cancel = true;
+                Error.SetError(txtCorreoElectronico, "direccion de correo incorrecta");
             }
         }
     }

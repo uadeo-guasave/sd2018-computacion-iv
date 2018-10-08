@@ -41,10 +41,10 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -145,6 +145,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(256, 20);
             this.txtNombre.TabIndex = 10;
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtApellidos
             // 
@@ -152,6 +153,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(256, 20);
             this.txtApellidos.TabIndex = 11;
+            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidos_Validating);
             // 
             // txtCorreoElectronico
             // 
@@ -159,13 +161,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(256, 20);
             this.txtCorreoElectronico.TabIndex = 12;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(27, 343);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(256, 20);
-            this.txtTelefono.TabIndex = 13;
+            this.txtCorreoElectronico.Validating += new System.ComponentModel.CancelEventHandler(this.txtCorreoElectronico_Validating);
             // 
             // btnGuardar
             // 
@@ -190,19 +186,27 @@
             this.btnCancelar.Location = new System.Drawing.Point(127, 384);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(28, 343);
+            this.maskedTextBox1.Mask = "(999)000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(254, 20);
+            this.maskedTextBox1.TabIndex = 13;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 502);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtCorreoElectronico);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombre);
@@ -239,9 +243,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtCorreoElectronico;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
