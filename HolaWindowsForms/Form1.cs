@@ -19,16 +19,18 @@ namespace HolaWindowsForms
 
         private void inicioDeSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formLogin = FormLogin.Instancia;
-            formLogin.MdiParent = this;
-            formLogin.Show();
-
-
+            FormLogin.Instancia.MdiParent = this;
+            FormLogin.Instancia.Show();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            new FormGrid().Show();
+        }
 
+        private void frmMdiPadre_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Aplicación cargada correctamente.";
         }
     }
 }

@@ -24,6 +24,10 @@ namespace HolaWindowsForms
                 }
                 return instancia;
             }
+            set
+            {
+                instancia = value;
+            }
         }
 
         private FormLogin()
@@ -48,6 +52,11 @@ namespace HolaWindowsForms
                 lblResultado.Text += "Se mantiene la sesión iniciada";
             else
                 lblResultado.Text += "No se mantiene la sesión iniciada";
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
     }
 }
