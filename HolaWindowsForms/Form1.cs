@@ -25,7 +25,9 @@ namespace HolaWindowsForms
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new FormGrid().Show();
+            Form formGrid = new FormGrid();
+            formGrid.MdiParent = this;
+            formGrid.Show();
         }
 
         private void frmMdiPadre_Load(object sender, EventArgs e)

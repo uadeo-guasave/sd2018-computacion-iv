@@ -55,9 +55,15 @@ namespace HolaWindowsForms
         {
             foreach (var empleado in Empleados)
             {
-                gridEmpleados.Rows.Add(empleado);
+                object[] emp = { empleado.Nombre, empleado.Apellidos, empleado.Edad, empleado.Departamento };
+                gridEmpleados.Rows.Add(emp);
             }
-            
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            gridEmpleados.Rows.Clear();
         }
     }
 }
