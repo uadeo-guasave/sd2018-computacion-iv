@@ -34,5 +34,12 @@ namespace HolaWindowsForms
         {
             toolStripStatusLabel1.Text = "Aplicación cargada correctamente.";
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var md = new MaestroDetalleVentas();
+            md.MdiParent = this;
+            md.Show();
+        }
     }
 }

@@ -16,5 +16,7 @@ namespace HolaWindowsForms.Models
 
         [Required]
         public double Precio { get; set; }
+
+        public List<VentaDetalle> VentaDetalles { get; set; }
     }
 }

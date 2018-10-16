@@ -19,5 +19,7 @@ namespace HolaWindowsForms.Models
 
         [Required, MaxLength(500)]
         public string Domicilio { get; set; }
+
+        public List<Venta> Ventas { get; set; }
     }
 }
