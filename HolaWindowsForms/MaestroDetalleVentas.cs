@@ -25,5 +25,11 @@ namespace HolaWindowsForms
                 db.Database.EnsureCreated();
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Form formBuscarCliente = new FormBuscarClienteConGrid(txtCliente.Text);
+            formBuscarCliente.ShowDialog();
+        }
     }
 }
