@@ -28,8 +28,29 @@ namespace HolaWindowsForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Form formBuscarCliente = new FormBuscarClienteConGrid(txtCliente.Text);
+            Form formBuscarCliente = new FormBuscarClienteConGrid();
             formBuscarCliente.ShowDialog();
+            if (Cliente != null)
+                txtNombreCliente.Text = Cliente.NombreCompleto;
+        }
+
+        public Cliente Cliente { get; set; } = null;
+
+        private static MaestroDetalleVentas instancia = null;
+        public static MaestroDetalleVentas Instancia
+        {
+            get
+            {
+                if (instancia == null)
+                {
+                    instancia = new MaestroDetalleVentas();
+                }
+                return instancia;
+            }
+            set
+            {
+                instancia = value;
+            }
         }
     }
 }

@@ -37,9 +37,8 @@ namespace HolaWindowsForms
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            var md = new MaestroDetalleVentas();
-            md.MdiParent = this;
-            md.Show();
+            MaestroDetalleVentas.Instancia.MdiParent = this;
+            MaestroDetalleVentas.Instancia.Show();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,5 +22,8 @@ namespace HolaWindowsForms.Models
         public string Domicilio { get; set; }
 
         public List<Venta> Ventas { get; set; }
+
+        [NotMapped]
+        public string NombreCompleto { get => $"{Nombre} {Apellidos}"; }
     }
 }

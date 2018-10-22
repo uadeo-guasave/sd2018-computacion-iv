@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -44,20 +44,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente";
             // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(15, 52);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(169, 20);
-            this.txtCliente.TabIndex = 1;
-            // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(190, 52);
+            this.btnBuscar.Location = new System.Drawing.Point(15, 52);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(115, 23);
             this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Buscar cliente";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -78,15 +71,24 @@
             this.txtNombreCliente.Size = new System.Drawing.Size(250, 20);
             this.txtNombreCliente.TabIndex = 4;
             // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.Location = new System.Drawing.Point(136, 52);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(129, 23);
+            this.btnNuevoCliente.TabIndex = 5;
+            this.btnNuevoCliente.Text = "Dar de alta cliente nuevo";
+            this.btnNuevoCliente.UseVisualStyleBackColor = true;
+            // 
             // MaestroDetalleVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label1);
             this.Name = "MaestroDetalleVentas";
             this.Text = "MaestroDetalleVentas";
@@ -99,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.Button btnNuevoCliente;
     }
 }
