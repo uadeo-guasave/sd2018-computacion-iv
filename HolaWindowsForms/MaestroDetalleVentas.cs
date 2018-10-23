@@ -52,5 +52,19 @@ namespace HolaWindowsForms
                 instancia = value;
             }
         }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            var nuevoCliente = new FormAltaCliente();
+            nuevoCliente.ShowDialog();
+            if (Cliente != null)
+                txtNombreCliente.Text = Cliente.NombreCompleto;
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            var buscarProducto = new FormBuscarProductoConGrid();
+            buscarProducto.ShowDialog();
+        }
     }
 }

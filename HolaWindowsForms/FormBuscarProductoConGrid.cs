@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HolaWindowsForms
 {
-    public partial class FormBuscarClienteConGrid : Form
+    public partial class FormBuscarProductoConGrid : Form
     {
-        public FormBuscarClienteConGrid()
+        public FormBuscarProductoConGrid()
         {
             InitializeComponent();
         }
@@ -28,35 +28,33 @@ namespace HolaWindowsForms
             //BuscarCliente(); pero ustedes borrenlo, bueno si quieren dejenlo, pero entre comentario, si ya lo borraron den ctrl+z
         }
 
-        private void BuscarCliente(string NombreABuscar)
+        private void BuscarProducto(string NombreABuscar)
         {
             NombreABuscar = NombreABuscar.ToLower();
-            // resource (open() close())
             using (var db = new AppDbContext())
             {
-                Clientes = new List<Cliente>();
-                // select * from clientes where lower(nombre) LIKE '%gax%' or lower(apellidos) LIKE '%gax%';
-                Clientes = db.Clientes
-                             .Where(c => c.Nombre.ToLower().Contains(NombreABuscar) || c.Apellidos.ToLower().Contains(NombreABuscar))
+                Productos = new List<Producto>();
+                Productos = db.Productos
+                             .Where(c => c.Nombre.ToLower().Contains(NombreABuscar))
                              .ToList();
-                var lista = new BindingList<Cliente>(Clientes);
-                gridDeClientes.DataSource = lista;
+                var lista = new BindingList<Producto>(Productos);
+                gridDeProductos.DataSource = lista;
             }
         }
 
-        private List<Cliente> Clientes { get; set; }
+        private List<Producto> Productos { get; set; }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             // deben validar que haya escrito algo en el cuadro, ustedes lo harán YO NO xD
-            BuscarCliente(txtABuscar.Text);
+            BuscarProducto(txtABuscar.Text);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (gridDeClientes.RowCount > 0)
+            if (gridDeProductos.RowCount > 0)
             {
-                Cliente cliente = (Cliente)gridDeClientes.CurrentRow.DataBoundItem;
+                Cliente cliente = (Cliente)gridDeProductos.CurrentRow.DataBoundItem;
                 MaestroDetalleVentas.Instancia.Cliente = cliente;
                 this.Close();
             }

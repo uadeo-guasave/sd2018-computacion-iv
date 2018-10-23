@@ -148,6 +148,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAltaCliente.Designer.cs">
+      <DependentUpon>FormAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarProductoConGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarProductoConGrid.Designer.cs">
+      <DependentUpon>FormBuscarProductoConGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarClienteConGrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAltaCliente.resx">
+      <DependentUpon>FormAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarProductoConGrid.resx">
+      <DependentUpon>FormBuscarProductoConGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarClienteConGrid.resx">
       <DependentUpon>FormBuscarClienteConGrid.cs</DependentUpon>
