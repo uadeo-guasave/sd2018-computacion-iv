@@ -1,4 +1,5 @@
-﻿using HolaWindowsForms.Models;
+﻿using HolaWindowsForms.Helpers;
+using HolaWindowsForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,8 +55,13 @@ namespace HolaWindowsForms
         {
             if (gridDeProductos.RowCount > 0)
             {
-                Cliente cliente = (Cliente)gridDeProductos.CurrentRow.DataBoundItem;
-                MaestroDetalleVentas.Instancia.Cliente = cliente;
+                Producto producto = (Producto)gridDeProductos.CurrentRow.DataBoundItem;
+                string cantidad = "";
+                var formCantidad = new MyInputBox("Cantidad?", "Escribe la cantidad de productos", out cantidad);
+                formCantidad.ShowDialog();
+                int cant = int.Parse(cantidad);
+                double total = cant * producto.Precio;
+                MaestroDetalleVentas.Instancia.Productos.Add((producto, cant, total));
                 this.Close();
             }
             else

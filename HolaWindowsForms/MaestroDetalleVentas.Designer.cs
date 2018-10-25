@@ -35,11 +35,14 @@
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gridProductos = new System.Windows.Forms.DataGridView();
-            this.btnCancelarProducto = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelarProducto = new System.Windows.Forms.Button();
+            this.comboProductos = new System.Windows.Forms.ComboBox();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,15 +116,6 @@
             this.gridProductos.Size = new System.Drawing.Size(509, 181);
             this.gridProductos.TabIndex = 7;
             // 
-            // btnCancelarProducto
-            // 
-            this.btnCancelarProducto.Location = new System.Drawing.Point(136, 92);
-            this.btnCancelarProducto.Name = "btnCancelarProducto";
-            this.btnCancelarProducto.Size = new System.Drawing.Size(129, 23);
-            this.btnCancelarProducto.TabIndex = 8;
-            this.btnCancelarProducto.Text = "Cancelar producto";
-            this.btnCancelarProducto.UseVisualStyleBackColor = true;
-            // 
             // Nombre
             // 
             this.Nombre.Frozen = true;
@@ -150,11 +144,47 @@
             this.PrecioTotal.Name = "PrecioTotal";
             this.PrecioTotal.ReadOnly = true;
             // 
+            // btnCancelarProducto
+            // 
+            this.btnCancelarProducto.Location = new System.Drawing.Point(136, 92);
+            this.btnCancelarProducto.Name = "btnCancelarProducto";
+            this.btnCancelarProducto.Size = new System.Drawing.Size(129, 23);
+            this.btnCancelarProducto.TabIndex = 8;
+            this.btnCancelarProducto.Text = "Cancelar producto";
+            this.btnCancelarProducto.UseVisualStyleBackColor = true;
+            // 
+            // comboProductos
+            // 
+            this.comboProductos.FormattingEnabled = true;
+            this.comboProductos.Location = new System.Drawing.Point(274, 92);
+            this.comboProductos.Name = "comboProductos";
+            this.comboProductos.Size = new System.Drawing.Size(169, 21);
+            this.comboProductos.TabIndex = 9;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Location = new System.Drawing.Point(497, 92);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(27, 23);
+            this.btnAgregarProducto.TabIndex = 10;
+            this.btnAgregarProducto.Text = "+";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(449, 92);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(42, 20);
+            this.txtCantidad.TabIndex = 11;
+            // 
             // MaestroDetalleVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 450);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.comboProductos);
             this.Controls.Add(this.btnCancelarProducto);
             this.Controls.Add(this.gridProductos);
             this.Controls.Add(this.btnAgregar);
@@ -186,5 +216,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
+        private System.Windows.Forms.ComboBox comboProductos;
+        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

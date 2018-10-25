@@ -1,4 +1,5 @@
-﻿using HolaWindowsForms.Models;
+﻿using HolaWindowsForms.Helpers;
+using HolaWindowsForms.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,10 @@ namespace HolaWindowsForms
             using (var db = new AppDbContext())
             {
                 db.Database.EnsureCreated();
+                var productos = new BindingList<Producto>(db.Productos.ToList());
+                comboProductos.ValueMember = "Id";
+                comboProductos.DisplayMember = "Nombre";
+                comboProductos.DataSource = productos;
             }
         }
 
@@ -63,8 +68,11 @@ namespace HolaWindowsForms
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            var buscarProducto = new FormBuscarProductoConGrid();
-            buscarProducto.ShowDialog();
+            //var buscarProducto = new FormBuscarProductoConGrid();
+            //buscarProducto.ShowDialog();
+
         }
+
+        public List<(Producto, int, double)> Productos { get; set; }
     }
 }

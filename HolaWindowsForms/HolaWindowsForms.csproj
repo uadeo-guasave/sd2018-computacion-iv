@@ -178,6 +178,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MyInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\MyInputBox.Designer.cs">
+      <DependentUpon>MyInputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaestroDetalleVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\MyInputBox.resx">
+      <DependentUpon>MyInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaestroDetalleVentas.resx">
       <DependentUpon>MaestroDetalleVentas.cs</DependentUpon>
