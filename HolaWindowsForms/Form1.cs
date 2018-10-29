@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HolaWindowsForms.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,12 @@ namespace HolaWindowsForms
         {
             MaestroDetalleVentas.Instancia.MdiParent = this;
             MaestroDetalleVentas.Instancia.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            var frmPrueba = new MyNumericInputBox().Show();
+            MessageBox.Show(frmPrueba.ToString());
         }
     }
 }

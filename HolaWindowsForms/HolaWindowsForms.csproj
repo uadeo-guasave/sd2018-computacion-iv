@@ -184,6 +184,7 @@
     <Compile Include="Helpers\MyInputBox.Designer.cs">
       <DependentUpon>MyInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MyNumericInputBox.cs" />
     <Compile Include="MaestroDetalleVentas.cs">
       <SubType>Form</SubType>
     </Compile>

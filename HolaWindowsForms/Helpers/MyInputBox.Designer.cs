@@ -46,12 +46,12 @@
             // 
             this.txtValor.Location = new System.Drawing.Point(12, 46);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(306, 20);
+            this.txtValor.Size = new System.Drawing.Size(225, 20);
             this.txtValor.TabIndex = 1;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(243, 83);
+            this.btnAceptar.Location = new System.Drawing.Point(243, 43);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 129);
+            this.ClientSize = new System.Drawing.Size(330, 91);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblCaption);
