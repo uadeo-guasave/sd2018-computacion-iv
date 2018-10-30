@@ -56,17 +56,23 @@ namespace HolaWindowsForms
             if (gridDeProductos.RowCount > 0)
             {
                 Producto producto = (Producto)gridDeProductos.CurrentRow.DataBoundItem;
-                string cantidad = "";
-                var formCantidad = new MyInputBox("Cantidad?", "Escribe la cantidad de productos", out cantidad);
-                formCantidad.ShowDialog();
-                int cant = int.Parse(cantidad);
+                int cant = new MyNumericInputBox().Show();
                 double total = cant * producto.Precio;
-                MaestroDetalleVentas.Instancia.Productos.Add((producto, cant, total));
+                var productoVenta = new ProductoAVender
+                {
+                    Id = producto.Id,
+                    Nombre = producto.Nombre,
+                    Precio = producto.Precio,
+                    Cantidad = cant,
+                    Total = total
+                };
+
+                MaestroDetalleVentas.Instancia.Productos.Add(productoVenta);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado cliente.");
+                MessageBox.Show("No se han encontrado productos para agregar.");
             }
             
         }

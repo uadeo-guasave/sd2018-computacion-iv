@@ -29,6 +29,8 @@ namespace HolaWindowsForms
                 comboProductos.DisplayMember = "Nombre";
                 comboProductos.DataSource = productos;
             }
+
+            gridProductos.DataSource = new BindingList<ProductoAVender>(Productos);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -68,11 +70,12 @@ namespace HolaWindowsForms
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            //var buscarProducto = new FormBuscarProductoConGrid();
-            //buscarProducto.ShowDialog();
-
+            var buscarProducto = new FormBuscarProductoConGrid();
+            buscarProducto.ShowDialog();
+            gridProductos.DataSource = null;
+            gridProductos.DataSource = Productos;
         }
 
-        public List<(Producto, int, double)> Productos { get; set; }
+        public List<ProductoAVender> Productos { get; set; } = new List<ProductoAVender>();
     }
 }

@@ -37,7 +37,8 @@ namespace HolaWindowsForms.Helpers
             Entrada = new NumericUpDown
             {
                 Location = new Point(10, 50),
-                Width = 80
+                Width = 80,
+                Minimum = 1
             };
 
             Boton = new Button

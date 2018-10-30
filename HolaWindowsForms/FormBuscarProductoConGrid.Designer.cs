@@ -99,7 +99,6 @@
             this.Name = "FormBuscarProductoConGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Búsqueda de productos";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormBuscarClienteConGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDeProductos)).EndInit();
             this.ResumeLayout(false);
