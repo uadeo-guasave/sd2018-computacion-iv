@@ -30,7 +30,7 @@ namespace HolaWindowsForms
                 comboProductos.DataSource = productos;
             }
 
-            gridProductos.DataSource = new BindingList<ProductoAVender>(Productos);
+            //gridProductos.DataSource = new BindingList<ProductoAVender>(Productos);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -72,10 +72,22 @@ namespace HolaWindowsForms
         {
             var buscarProducto = new FormBuscarProductoConGrid();
             buscarProducto.ShowDialog();
-            gridProductos.DataSource = null;
-            gridProductos.DataSource = Productos;
+            //gridProductos.DataSource = null;
+            //gridProductos.DataSource = Productos;
         }
 
         public List<ProductoAVender> Productos { get; set; } = new List<ProductoAVender>();
+
+        public void AgregarProductoAlGrid(ProductoAVender producto)
+        {
+            string[] p = {
+                producto.Id.ToString(),
+                producto.Nombre,
+                producto.Precio.ToString(),
+                producto.Cantidad.ToString(),
+                producto.Total.ToString()
+            };
+            gridProductos.Rows.Add(p);
+        }
     }
 }

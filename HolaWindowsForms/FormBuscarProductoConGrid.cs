@@ -67,7 +67,8 @@ namespace HolaWindowsForms
                     Total = total
                 };
 
-                MaestroDetalleVentas.Instancia.Productos.Add(productoVenta);
+                //MaestroDetalleVentas.Instancia.Productos.Add(productoVenta);
+                MaestroDetalleVentas.Instancia.AgregarProductoAlGrid(productoVenta);
                 this.Close();
             }
             else

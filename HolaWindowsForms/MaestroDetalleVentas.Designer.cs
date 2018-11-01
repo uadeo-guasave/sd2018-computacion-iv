@@ -39,6 +39,11 @@
             this.comboProductos = new System.Windows.Forms.ComboBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +106,12 @@
             // gridProductos
             // 
             this.gridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Precio,
+            this.Cantidad,
+            this.Total});
             this.gridProductos.Location = new System.Drawing.Point(15, 121);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.ReadOnly = true;
@@ -140,6 +151,41 @@
             this.txtCantidad.Size = new System.Drawing.Size(42, 20);
             this.txtCantidad.TabIndex = 11;
             // 
+            // Id
+            // 
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.Frozen = true;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Frozen = true;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.Frozen = true;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // MaestroDetalleVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,5 +224,10 @@
         private System.Windows.Forms.ComboBox comboProductos;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }
